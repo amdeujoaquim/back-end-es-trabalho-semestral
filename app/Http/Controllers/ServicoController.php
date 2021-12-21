@@ -37,6 +37,9 @@ class ServicoController extends Controller
         $validator = Validator::make($request->all(), [
 
             'nome' => 'required',
+            'medicoChefe' => 'required',
+            'descricao' => 'required'
+
 
         ]);
 
@@ -45,7 +48,8 @@ class ServicoController extends Controller
         } else {
             $Servico = new Servico;
             $Servico->nome = $request->nome;
-
+            $Servico->medicoChefe = $request->medicoChefe;
+            $Servico->descricao = $request->descricao;
 
             $Servico->created_at = date('Y-m-d H:i:s');
             $save =   $Servico->save();
@@ -67,6 +71,8 @@ class ServicoController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nome' => 'required',
+            'medicoChefe' => 'required',
+            'descricao' => 'required',
 
             'id' => 'required'
         ]);
@@ -76,6 +82,8 @@ class ServicoController extends Controller
             $Servico = Servico::find($request->id);
 
             $Servico->nome = $request->nome;
+            $Servico->medicoChefe = $request->medicoChefe;
+            $Servico->descricao = $request->descricao;
 
 
             $Servico->updated_at = date('Y-m-d H:i:s');

@@ -18,6 +18,8 @@ class CreateUsuarioTable extends Migration
             $table->string('nome');
             $table->string('senha');
             $table->string('userName');
+            $table->string('tipo');
+
 
 
             $table->timestamps();

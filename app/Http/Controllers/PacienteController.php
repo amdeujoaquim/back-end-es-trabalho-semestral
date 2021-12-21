@@ -37,7 +37,8 @@ class PacienteController extends Controller
             'nome' => 'required',
             'dataNascimento' => 'required',
             'email' => 'required',
-            'contacto' => 'required'
+            'contacto' => 'required',
+            'residencia' => 'required'
 
         ]);
 
@@ -49,6 +50,7 @@ class PacienteController extends Controller
             $Paciente->dataNascimento = $request->dataNascimento;
             $Paciente->email = $request->email;
             $Paciente->contacto = $request->contacto;
+            $Paciente->residencia = $request->residencia;
 
             $Paciente->created_at = date('Y-m-d H:i:s');
             $save =   $Paciente->save();
@@ -73,6 +75,7 @@ class PacienteController extends Controller
             'dataNascimento' => 'required',
             'email' => 'required',
             'contacto' => 'required',
+            'residencia' => 'required',
             'id' => 'required'
         ]);
         if ($validator->fails()) {
@@ -84,6 +87,9 @@ class PacienteController extends Controller
             $Paciente->dataNascimento = $request->dataNascimento;
             $Paciente->email = $request->email;
             $Paciente->contacto = $request->contacto;
+            $Paciente->residencia = $request->residencia;
+
+
 
             $Paciente->updated_at = date('Y-m-d H:i:s');
             $update =  $Paciente->save();

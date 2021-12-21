@@ -19,6 +19,8 @@ class CreatePacienteTable extends Migration
             $table->string('dataNascimento');
             $table->string('email');
             $table->string('contacto');
+            $table->string('residencia');
+
 
 
             $table->timestamps();

@@ -36,7 +36,8 @@ class UsuarioController extends Controller
 
             'nome' => 'required',
             'senha' => 'required',
-            'userName' => 'required'
+            'userName' => 'required',
+            'tipo' => 'required'
 
         ]);
 
@@ -47,7 +48,7 @@ class UsuarioController extends Controller
             $Usuario->nome = $request->nome;
             $Usuario->senha = $request->senha;
             $Usuario->userName = $request->userName;
-
+            $Usuario->tipo = $request->tipo;
 
 
             $Usuario->created_at = date('Y-m-d H:i:s');
@@ -72,6 +73,7 @@ class UsuarioController extends Controller
             'nome' => 'required',
             'senha' => 'required',
             'userName' => 'required',
+            'tipo' => 'required',
             'id' => 'required'
         ]);
         if ($validator->fails()) {
@@ -81,6 +83,7 @@ class UsuarioController extends Controller
             $Usuario->nome = $request->nome;
             $Usuario->senha = $request->senha;
             $Usuario->userName = $request->userName;
+            $Usuario->tipo = $request->tipo;
 
 
             $Usuario->updated_at = date('Y-m-d H:i:s');

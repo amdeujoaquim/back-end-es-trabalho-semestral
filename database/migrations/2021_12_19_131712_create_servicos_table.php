@@ -16,6 +16,9 @@ class CreateServicosTable extends Migration
         Schema::create('servicos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('medicoChefe');
+            $table->string('descricao');
+
             $table->timestamps();
         });
     }
